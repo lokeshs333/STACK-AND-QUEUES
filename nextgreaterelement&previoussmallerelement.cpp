@@ -7,6 +7,26 @@ using namespace std;
 
 /* prints element and NGE pair for all
 elements of arr[] of size n */
+void previous_element_in_stack(int arr[], int n)
+{
+    stack<int> st;
+    for (int i = 0; i < n; i++)
+    {
+        while (!st.empty() && st.top() >= arr[i])
+        {
+            st.pop();
+        }
+        if (st.empty())
+        {
+            cout << "-1" << endl;
+        }
+        else
+        {
+            cout << st.top() << endl;
+        }
+        st.push(arr[i]);
+    }
+}
 void printNGE(int arr[], int n)
 {
     stack<int> s;
