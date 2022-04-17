@@ -31,7 +31,7 @@ void printNGE(int arr[], int n)
         a) print the pair
         b) keep popping while elements are
         smaller and stack is not empty */
-        if (!s.empty() && s.top() < arr[i])
+       while (!s.empty() && s.top() < arr[i])
         {
             cout << s.top()
                  << " --> " << arr[i] << endl;
