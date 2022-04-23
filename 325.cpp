@@ -1,64 +1,47 @@
-// { Driver Code Starts
+// self done petrol pump problem
 #include <iostream>
 #include <stack>
+#include <queue>
 using namespace std;
-
-struct petrolPump
+struct petrol_pump
 {
     int petrol;
     int distance;
 };
-
-// } Driver Code Ends
-/*
-The structure of petrolPump is
-struct petrolPump
+void solution(petrol_pump p[], int n)
 {
-    int petrol;
-    int distance;
-};*/
-
-/*You are required to complete this method*/
-class Solution
-{
-public:
-    // Function to find starting point where the truck can start to get through
-    // the complete circle without exhausting its petrol in between.
-    int tour(petrolPump p[], int n)
+    int required_petrol = 0;
+    int extra_petrol = 0;
+    int start = 0;
+    for (int i = 0; i < n; i++)
     {
-        // Your code here
-        int start = 0;
-        int required_fuel = 0;
-        int extra_fuel = 0;
-        for (int i = 0; i < n; i++)
+        extra_petrol += p[i].petrol - p[i].distance;
+        if (extra_petrol < 0)
         {
-            extra_fuel = extra_fuel + (p[i].petrol - p[i].distance);
-            if (extra_fuel < 0)
-            {
-                start = i + 1;
-                required_fuel = required_fuel + extra_fuel;
-                extra_fuel = 0;
-            }
+            start++;
+            required_petrol += extra_petrol;
+            extra_petrol = 0;
         }
-        if (required_fuel + extra_fuel >= 0)
-        {
-            return start;
-        }
-        return -1;
     }
-};
-
-// { Driver Code Starts.
-
+    if (extra_petrol + extra_petrol >= 0)
+    {
+        cout << "answer is" << start;
+    }
+    if (extra_petrol + extra_petrol < 0)
+    {
+        cout << "answer is "
+             << "   -1   " << endl;
+    }
+}
 int main()
 {
+    int n = 4;
 
-    int n;
-    cin >> n;
-    petrolPump p[n];
+    petrol_pump arr[n];
     for (int i = 0; i < n; i++)
-        cin >> p[i].petrol >> p[i].distance;
-    Solution obj;
-    cout << "answer is " << obj.tour(p, n) << endl;
+    {
+        cin >> arr[i].petrol >> arr[i].distance;
+    }
+    solution(arr, n);
+    return 0;
 }
-// } Driver Code Ends
