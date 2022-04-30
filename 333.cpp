@@ -1,4 +1,4 @@
-// A Stack based C++ program to find next
+// A Stack based C++ program to find next..
 // smaller element for all array elements
 #include <iostream>
 #include <stack>
