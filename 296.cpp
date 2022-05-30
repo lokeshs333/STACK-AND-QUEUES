@@ -36,7 +36,8 @@ void push(stack *ptr, int val)
 {
     if (isfull(ptr))
     {
-        cout << "stack overflow cannot be pushed further" << endl;
+        cout << "stack overflow cannot be pushed further ok
+" << endl;
         cout << "cannot be pushed in this stack  = " << val << endl;
     }
     else
