@@ -1,5 +1,5 @@
 // C++ code to reverse a
-// stack using recursion
+// stack using recursion..
 #include <iostream>
 #include <stack>
 using namespace std;
