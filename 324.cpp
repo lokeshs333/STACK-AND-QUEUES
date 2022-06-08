@@ -1,4 +1,4 @@
-// Interleave the first half of the queue with second half
+// Interleave the first half of the queue with second half..
 #include <iostream>
 #include <stack>
 #include <stack>
