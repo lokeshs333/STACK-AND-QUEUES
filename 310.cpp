@@ -1,6 +1,7 @@
 #include <iostream>
 #include <stack>
 using namespace std;
+//..
 // void insert(stack<int> &s, int e)
 // {
 //     if (s.empty() || s.top() < e)
